@@ -1,0 +1,388 @@
+:root {
+  --bg-color: #EFF1FF;
+  --bg-header: #8E9AAF;
+  --bg-header-secondary: #CBC0D3;
+  --bg-text: #FEEAFA;
+  --bg-white: #FFFFFF;
+
+  --fc-primary: #23053A;
+  --fc-secondary: #4A4E69;
+  --fc-white: #FFFFFF;
+
+  --fs-body: 1.6rem;
+
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  background-color: var(--bg-color);
+  
+  font-family: 'Palanquin', sans-serif;
+  font-size: var(--fs-body);
+}
+
+.page {
+  margin: 0 auto;
+  width: 32rem;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.page::before {
+  content: '';
+
+  display: block;
+  width: 100%;
+  height: 29rem;
+
+  background-color: var(--bg-header);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: -1;
+}
+
+#logo {
+  margin-top: 3rem;
+  min-height: 13.7rem;
+  min-width: 13.7rem;
+}
+
+.cabecalho {
+  text-align: center;
+  
+  text-transform: uppercase;
+
+  margin: 3.2rem 0 2.9rem;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cabecalho h1 {
+  font-family: 'Staatliches', cursive;
+  font-size: 4.0rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 3.4rem;
+  letter-spacing: 0.05rem;
+
+  color: var(--fc-white);
+
+  padding: 1rem 0;
+
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+header::before {
+  content: '';
+
+  display: block;
+  width: 100vw;
+  top: 21rem;
+  height: 5rem;
+
+  background-color: var(--bg-header-secondary);
+
+  position: absolute;
+
+  z-index: -1;
+}
+
+
+.content {
+  display: flex;
+  align-items: center;
+  text-align: justify;
+  hyphens: auto;
+
+  margin: 3.0rem auto 6.0rem;
+}
+
+.content p {
+  font-size: 2rem;
+  line-height: 2rem;
+  color: var(--fc-primary);
+
+  width: 32rem;
+}
+
+
+main .card {
+  position: relative;
+  width: 32rem;
+  animation-name: downtop;
+  animation-delay: 400ms;
+  animation-duration: 1200ms;
+  animation-fill-mode: backwards;
+}
+
+.card .heading {
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+
+  background-color: var(--bg-text);
+  border-radius: 20px;
+  padding: 0.2rem 2rem;
+
+  animation-name: topdown;
+  animation-delay: 600ms;
+  animation-duration: 1200ms;
+  animation-fill-mode: backwards;
+}
+
+main .card h3 {
+  font-family: 'Staatliches';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 3.4rem;
+  letter-spacing: 0.05em;
+
+  color: var(--fc-secondary);
+}
+
+main div:nth-child(3), main div:nth-child(6){
+  display: none;
+}
+
+footer {
+  display: none;
+}
+
+@keyframes topdown {
+  0% {
+    opacity: 0;
+    top: 0rem;
+  }
+
+  100% {
+    opacity: 1;
+    top: 1.5rem;
+  }
+}
+
+@keyframes downtop {
+  0% {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 320px) {
+  main .card {
+    position: relative;
+    width: 18rem;
+  }
+
+.content p {
+  width: 18rem;
+}
+
+  .card img {
+    width: 18rem;
+  }
+}
+
+@media (max-width: 320px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  body {
+    background-color: var(--bg-white);
+    height: 100vh;
+  }
+
+  .page {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  .page::before {
+      height: 100%;
+      width: 37.7rem;
+    }
+
+  header {
+    justify-content: start;
+    height: 100%;
+    width: 37.7rem;
+  }
+
+  header::before {
+    width: 37.7rem;
+    top: 18rem;
+  }
+
+
+  img#logo {
+    width: 14.2rem;
+    height: 14.2rem;
+    margin: 0;
+  }
+
+  .cabecalho {
+    margin: 3.2rem 0;
+    height: 7rem;
+  }
+
+  .cabecalho h1 {
+    font-family: 'Staatliches', sans-serif;
+    font-size: 4.8rem;
+    line-height: 3.4rem;
+    color: var(--fc-white);
+  }
+
+  .content {
+    background-color: var(--bg-header);
+    margin: 0;
+  }
+
+  main {
+    background-color: var(--fc-white);
+    width: calc(99.8% - 377px);
+    height: calc(100vh - 30px);
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    grid-template-areas: "A B C"
+      "D B F"
+      "D E F";
+    grid-template-columns: 16rem 16rem 16rem;
+    grid-column-gap: 3.2rem;
+    grid-template-rows: auto auto auto;
+    grid-row-gap: 3.2rem;
+  }
+
+  .card img{
+    width: 18rem;
+  }
+
+  .content p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.4rem;
+    color: var(--fc-white);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    hyphens: none;
+  }
+
+  main div:nth-child(3), main div:nth-child(6){
+    display: block;
+  }
+
+
+  main>div:nth-child(1) {
+    grid-area: A;
+  }
+
+  main>div:nth-child(2) {
+    grid-area: B;
+  }
+
+  main>div:nth-child(3) {
+    grid-area: C;
+  }
+
+  main > div:nth-child(4) {
+    grid-area: E;
+  }
+
+  main > div:nth-child(5) {
+    grid-area: D;
+  }
+
+
+  main > div:nth-child(6) {
+    grid-area: F;
+  }
+
+  .card .heading {
+    display: none;
+  }
+
+  footer {
+    display: block;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+
+    text-align: center;
+
+    color: var(--fc-secondary);
+    background-color: var(--fc-white);
+
+    position: absolute;
+    bottom: 0;
+    left: 60%;
+
+    text-align: center;
+    transform: translateX(-50%);
+  }
+
+  footer a {
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--fc-secondary);
+  }
+}
+
+@media (min-width: 1300px) {
+  .card img {
+    width: 25rem;
+  }
+
+  main {
+    grid-template-columns: 22rem 22rem 22rem;
+    grid-column-gap: 6.2rem;
+  }
+}
+
+@media (min-width: 1480px) {
+  main {
+    height: calc(100vh - 14.2rem);
+    margin-top: 5rem;
+    grid-template-columns: 32rem 32rem 32rem;
+  }
+
+  .card img {
+    width: 32rem;
+  }
+}
