@@ -28,7 +28,7 @@ A Landing Page Space Cream é uma página de apresentação de um produto fictí
 </div>
 
 ## Acesso ao projeto
-O projeto está disponível no seguinte link: [link para o website]().
+O projeto está disponível no seguinte link: [link para o website](https://landing-page-space-cream.vercel.app/).
 
 ## Tecnologias utilizadas
 Este projeto foi desenvolvido utilizando as seguintes tecnologias:
